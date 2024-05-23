@@ -116,7 +116,7 @@ const projectsDom = (() => {
     }
     function deleteProject(projectIndex){
         myProjects.splice(projectIndex, 1)
-       // projects.saveProjectsToLocalStorage()
+        projects.saveProjectsToLocalStorage()
         
         displayProjects()
     }
@@ -130,7 +130,7 @@ const projectsDom = (() => {
 
     function deleteTask(taskIndex) {
         selectedProject.tasks.splice(taskIndex, 1);
-       // projects.saveProjectsToLocalStorage();
+        projects.saveProjectsToLocalStorage();
       
         displaySelectedProjectTasks();
     }
@@ -151,7 +151,7 @@ const projectsDom = (() => {
 
        
         
-       //projects.saveProjectsToLocalStorage();
+       projects.saveProjectsToLocalStorage();
         projectTitle.value = '';
         displayProjects();
         projectDialog.close();
@@ -167,8 +167,8 @@ const projectsDom = (() => {
         if (selectedProject) {
             taskTitle.value = '';
             taskDate.value = '';
-             // Clear the task title for new task
-            editMode = false; // Ensure edit mode is off when adding a new task
+             
+            editMode = false; 
             taskDialog.showModal();
         } else {
             alert("Please select a project first.");
@@ -206,7 +206,7 @@ const projectsDom = (() => {
                 
                 selectedProject.addTaskToProject(taskTitleInput,differenceDays);
             }
-          //  projects.saveProjectsToLocalStorage();
+            projects.saveProjectsToLocalStorage();
            
             taskTitle.value = '';
             taskDate.value = '';
@@ -225,10 +225,10 @@ const projectsDom = (() => {
     });
 
     // For testing purposes
-    let project1 = new projectProperties('Project1');
-    project1.addTaskToProject('task1 project1','2024-05-03');
-    let project2 = new projectProperties('Project2');
-    myProjects.push(project1, project2);
+    //let project1 = new projectProperties('Project1');
+    //project1.addTaskToProject('task1 project1','2024-05-03');
+    //let project2 = new projectProperties('Project2');
+    //myProjects.push(project1, project2);
 
     displayProjects();
 })();

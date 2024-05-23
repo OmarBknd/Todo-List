@@ -11,16 +11,20 @@ export class projectProperties{
     addTaskToProject(taskTitle, taskDate) {
         const task = new TaskProperties(taskTitle, taskDate);
         this.tasks.push(task);
-        //projects.saveProjectsToLocalStorage();
+        projects.saveProjectsToLocalStorage();
         return task;
     }
 }
 
 const projects = (()=>{
-    //let myProjects =JSON.parse(localStorage.getItem('myProjects')) 
-   let myProjects = [];
-
- 
+    let myProjects =JSON.parse(localStorage.getItem('myProjects')) || [] 
+  // let myProjects = [];
+  myProjects = myProjects.map(project => {
+    const rehydratedProject = Object.assign(new projectProperties(project.title), project);
+    rehydratedProject.tasks = project.tasks.map(task => Object.assign(new TaskProperties(task.title, task.date), task));
+    return rehydratedProject;
+});
+  
     function saveProjectsToLocalStorage(){
         localStorage.setItem('myProjects',JSON.stringify(myProjects))
         
