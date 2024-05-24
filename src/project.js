@@ -20,9 +20,9 @@ const projects = (()=>{
     let myProjects =JSON.parse(localStorage.getItem('myProjects')) || [] 
   // let myProjects = [];
   myProjects = myProjects.map(project => {
-    const rehydratedProject = Object.assign(new projectProperties(project.title), project);
-    rehydratedProject.tasks = project.tasks.map(task => Object.assign(new TaskProperties(task.title, task.date), task));
-    return rehydratedProject;
+    const reassignToObject = Object.assign(new projectProperties(project.title), project);
+    reassignToObject.tasks = project.tasks.map(task => Object.assign(new TaskProperties(task.title, task.date), task));
+    return reassignToObject;
 });
   
     function saveProjectsToLocalStorage(){
