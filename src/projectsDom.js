@@ -81,12 +81,18 @@ const projectsDom = (() => {
             const descriptionInput = document.createElement('p');
             const dateInput = document.createElement('p');
             
+           
+           if(task.priority === 'low'){taskBox.classList.add('low')}
+            else if(task.priority === 'high'){taskBox.classList.add('high')}
+            else if(task.priority === 'medium'){taskBox.classList.add('medium')}
+            
+            
             titleInput.textContent = task.title;
             descriptionInput.textContent = task.description;
             dateInput.textContent = task.date;
-            
            
             
+           
             taskBox.appendChild(titleInput);
 
             
@@ -180,6 +186,7 @@ const projectsDom = (() => {
             taskTitle.value = '';
             taskDescription.value = '';
             taskDate.value = '';
+           
              
             editMode = false; 
             taskDialog.showModal();
@@ -198,7 +205,9 @@ const projectsDom = (() => {
             const taskTitleInput = taskTitle.value;
             const taskDateInput = taskDate.value;
             const taskDescriptionInput = taskDescription.value;
+            const taskPriorityInput = taskPriority.value;
             let differenceDays = differenceInDays(taskDateInput,currentTime)
+            
             if(differenceDays > 0){
                differenceDays =  `${currentTime} ${differenceDays} days left`;
                 
@@ -215,12 +224,13 @@ const projectsDom = (() => {
                 selectedProject.tasks[editTaskIndex].title = taskTitleInput;
                 selectedProject.tasks[editTaskIndex].description = taskDescriptionInput;
                 selectedProject.tasks[editTaskIndex].date = differenceDays;
+                selectedProject.tasks[editTaskIndex].priority = taskPriorityInput;
                 
 
                 
             } else {
                 
-                selectedProject.addTaskToProject(taskTitleInput,taskDescriptionInput,differenceDays);
+                selectedProject.addTaskToProject(taskTitleInput,taskDescriptionInput,differenceDays,taskPriorityInput);
             }
             projects.saveProjectsToLocalStorage();
            

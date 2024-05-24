@@ -56,7 +56,15 @@ body{
     width: 100%;
    
 }
-
+.low{
+    background-color: #00A1E4;
+}
+.high{
+    background-color: #2D080A;
+}
+.medium{
+    background-color: aquamarine;
+}
 .dialog{
     border-radius: 2rem;
     background-color: #2D080A;
