@@ -17,7 +17,7 @@ body{
    
 }
 #header{
-    background-color: #F5B700;
+    background-color: #212D40;
    grid-column: 1/3;
    grid-row: 1;
     display: grid;
@@ -28,7 +28,7 @@ body{
    grid-column: 1/2;
    grid-row: 2/4;
   
-    background-color: #00A1E4;
+    background-color: #485265;
     width: 100%;
     min-height: 100%;
    
@@ -52,18 +52,20 @@ body{
 }
 
 .task-box{
-    border: 1px solid;
+    border: 2px solid transparent;
+    border-radius: 0.45rem;
     width: 100%;
+    background-color: #364156;
    
 }
 .low{
-    background-color: #00A1E4;
+    box-shadow: inset 0 3px 3px  #00A1E4 ;
 }
 .high{
-    background-color: #2D080A;
+    box-shadow: inset 0 3px 3px #2D080A ;
 }
 .medium{
-    background-color: aquamarine;
+    box-shadow: inset 0 3px 3px aquamarine ;
 }
 .dialog{
     border-radius: 2rem;
