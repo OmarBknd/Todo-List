@@ -1,6 +1,11 @@
+html{
+    height: 100%;
+}
 body{
    margin: 0;
    padding: 0;
+   min-height: 100%;
+   
 }
 #container{
     display: grid;
@@ -9,7 +14,7 @@ body{
   
 
     width: 100%;
-    height: auto;
+   
 }
 #header{
     background-color: #F5B700;
@@ -21,11 +26,22 @@ body{
 .projects-menu{
     display: grid;
    grid-column: 1/2;
-   grid-row: 1/4;
+   grid-row: 2/4;
+  
     background-color: #00A1E4;
+    max-width: 140px;
+    min-height: 100%;
    
    
 
+}
+.project-list{
+    width: 100px;
+    
+    
+}
+#projectContainer{
+    
 }
 #taskContainer, #addTask{
     grid-column: 2/3;
@@ -50,4 +66,7 @@ body{
     justify-content: center;
     align-items: center; 
     color: aliceblue;  
+}
+.add-task-btn{
+   text-align: center;
 }

@@ -1,5 +1,5 @@
-import projects, { projectProperties } from "./project";
-import tasks from "./task";
+import projects from "./project";
+
 import {format,differenceInDays } from "date-fns";
 
 const projectsDom = (() => {
@@ -32,6 +32,8 @@ const projectsDom = (() => {
 
         myProjects.forEach((project, index) => {
             const projectBox = document.createElement('div');
+            const projectList = document.createElement('ul');
+            projectList.classList.add('project-list');
             projectBox.classList.add('project-box');
             projectBox.dataset.index = index;
 
@@ -58,8 +60,9 @@ const projectsDom = (() => {
                 deleteProject(index)
             })
            
-            projectBox.appendChild(deleteBtn)
-            projectContainer.appendChild(projectBox);
+            projectBox.appendChild(deleteBtn);
+            projectList.appendChild(projectBox);
+            projectContainer.appendChild(projectList);
         });
 
     }
