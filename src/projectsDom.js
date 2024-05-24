@@ -17,6 +17,7 @@ const projectsDom = (() => {
     const taskDialog = document.querySelector('#taskDialog');
     const taskConfirmBtn = document.querySelector('#taskConfirmBtn');
     const taskTitle = document.querySelector('#taskTitle');
+    const taskDescription = document.querySelector('#taskDescription');
     const taskDate = document.querySelector('#taskDate');
     const taskCloseBtn = document.querySelector('#taskCloseBtn');
 
@@ -76,17 +77,20 @@ const projectsDom = (() => {
             taskBox.classList.add('task-box');
 
             const titleInput = document.createElement('p');
+            const descriptionInput = document.createElement('p');
             const dateInput = document.createElement('p');
             
             titleInput.textContent = task.title;
+            descriptionInput.textContent = task.description;
             dateInput.textContent = task.date;
             
            
             
             taskBox.appendChild(titleInput);
-            taskBox.appendChild(dateInput)
+            taskBox.appendChild(descriptionInput);
+            taskBox.appendChild(dateInput);
 
-            // Add Edit Button
+            
             const editBtn = document.createElement('button');
             editBtn.textContent = 'Edit';
             editBtn.addEventListener('click', () => {
@@ -94,7 +98,7 @@ const projectsDom = (() => {
             });
             taskBox.appendChild(editBtn);
 
-            // Add Delete Button
+           
             const deleteBtn = document.createElement('button');
             deleteBtn.textContent = 'Delete';
             deleteBtn.addEventListener('click', () => {
@@ -169,6 +173,7 @@ const projectsDom = (() => {
     addTaskBtn.addEventListener('click', () => {
         if (selectedProject) {
             taskTitle.value = '';
+            taskDescription.value = '';
             taskDate.value = '';
              
             editMode = false; 
@@ -187,6 +192,7 @@ const projectsDom = (() => {
             
             const taskTitleInput = taskTitle.value;
             const taskDateInput = taskDate.value;
+            const taskDescriptionInput = taskDescription.value;
             let differenceDays = differenceInDays(taskDateInput,currentTime)
             if(differenceDays > 0){
                differenceDays =  `${currentTime} ${differenceDays} days left`;
@@ -202,17 +208,20 @@ const projectsDom = (() => {
             if (editMode) {
                 
                 selectedProject.tasks[editTaskIndex].title = taskTitleInput;
+                selectedProject.tasks[editTaskIndex].description = taskDescriptionInput;
                 selectedProject.tasks[editTaskIndex].date = differenceDays;
+                
 
                 
             } else {
                 
-                selectedProject.addTaskToProject(taskTitleInput,differenceDays);
+                selectedProject.addTaskToProject(taskTitleInput,taskDescriptionInput,differenceDays);
             }
             projects.saveProjectsToLocalStorage();
            
             taskTitle.value = '';
             taskDate.value = '';
+            taskDescription.value = '';
             
             displaySelectedProjectTasks();
 
@@ -224,6 +233,7 @@ const projectsDom = (() => {
         e.preventDefault();
         taskTitle.value = '';
         taskDate.value = '';
+        taskDescription.value = '';
         taskDialog.close();
     });
 

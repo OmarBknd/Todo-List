@@ -4,18 +4,19 @@
 console.log('tasks page');
 
 class TaskProperties{
-    constructor(title,date){
+    constructor(title,date,description){
         this.title = title;
         this.date = date;
+        this.description = description;
 
     }
 }
  const tasks = (()=>{
 let myTasks =  [];
 
- function addTask(title,date){
+ function addTask(title,date,description){
 
-    const task = new TaskProperties(title,date);
+    const task = new TaskProperties(title,date,description);
     myTasks.push(task)
     return task
    
