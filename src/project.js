@@ -8,8 +8,8 @@ export class projectProperties{
          
     }
     
-    addTaskToProject(taskTitle, taskDate, taskDescription) {
-        const task = new TaskProperties(taskTitle, taskDate, taskDescription);
+    addTaskToProject(taskTitle, taskDate, taskDescription, taskPriority) {
+        const task = new TaskProperties(taskTitle, taskDate, taskDescription, taskPriority);
         this.tasks.push(task);
         projects.saveProjectsToLocalStorage();
         return task;

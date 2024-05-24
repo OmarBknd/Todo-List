@@ -20,7 +20,9 @@
 
     <div class="add-task-btn">
         <button id="addTaskBtn">add Task</button>
-        <div id="taskContainer"></div>
+        <div id="taskContainer">
+            <span id="TaskcheckBox"></span>
+        </div>
     </div>
             <div>
                 <dialog id="projectDialog" class="dialog">
@@ -52,6 +54,7 @@
                             <label for=""></label>
                             <input type="text" id="taskTitle" name="title" required>
                         </div>
+
                         <div>
                             <legend>Description</legend>
                             <label for=""></label>
@@ -61,6 +64,15 @@
                             <legend>Due date</legend>
                             <label for="for"></label>
                             <input type="date" id="taskDate">
+                        </div>
+                        <div>
+                            <legend>Priority</legend>
+                            <label for="Priority"></label>
+                            <select name="Priority" id="taskPriority" size="1">
+                                <option value="low">Low</option>
+                                <option value="Medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
                         </div>
                        
                         

@@ -46,10 +46,15 @@ body{
 #taskContainer, #addTask{
     grid-column: 2/3;
 }
+#taskContainer{
+    display: grid;
+    gap: 10px;
+}
 
 .task-box{
     border: 1px solid;
-    width: 200px;
+    width: 100%;
+   
 }
 
 .dialog{

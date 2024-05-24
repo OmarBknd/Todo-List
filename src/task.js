@@ -14,9 +14,9 @@ class TaskProperties{
  const tasks = (()=>{
 let myTasks =  [];
 
- function addTask(title,date,description){
+ function addTask(title,date,description,priority){
 
-    const task = new TaskProperties(title,date,description);
+    const task = new TaskProperties(title,date,description,priority);
     myTasks.push(task)
     return task
    

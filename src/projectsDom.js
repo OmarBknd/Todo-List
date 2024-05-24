@@ -19,6 +19,7 @@ const projectsDom = (() => {
     const taskTitle = document.querySelector('#taskTitle');
     const taskDescription = document.querySelector('#taskDescription');
     const taskDate = document.querySelector('#taskDate');
+    const taskPriority = document.querySelector('#taskPriority');
     const taskCloseBtn = document.querySelector('#taskCloseBtn');
 
      
@@ -87,8 +88,12 @@ const projectsDom = (() => {
            
             
             taskBox.appendChild(titleInput);
-            taskBox.appendChild(descriptionInput);
+
+            
+            taskBox.appendChild(descriptionInput)
             taskBox.appendChild(dateInput);
+
+            
 
             
             const editBtn = document.createElement('button');
