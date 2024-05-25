@@ -37,13 +37,14 @@ const projectsDom = (() => {
         myProjects.forEach((project, index) => {
             const projectBox = document.createElement('div');
             const projectList = document.createElement('ul');
+          
             projectList.classList.add('project-list');
           
             projectBox.classList.add('project-box');
             projectBox.dataset.index = index;
 
             const titleInput = document.createElement('div');
-            titleInput.classList.add('svg-icons');
+           
            
             titleInput.textContent = project.title;
             
@@ -66,14 +67,15 @@ const projectsDom = (() => {
             //projectBox.appendChild(editBtn)
 
             const deleteBtn = document.createElement('span');
-            const editIcon = new Image();
-            editIcon.src = editSvgIcon;
-            titleInput.appendChild(editIcon)
+            deleteBtn.classList.add('svg-icons');
+            const deleteIcon = new Image();
+            deleteIcon.src = deleteSvgIcon;
+            deleteBtn.appendChild(deleteIcon)
             deleteBtn.addEventListener('click',()=>{
                 deleteProject(index)
             })
-           
-            projectBox.appendChild(deleteBtn);
+            titleInput.appendChild(deleteBtn)
+           // projectBox.appendChild(deleteBtn);
             projectList.appendChild(projectBox);
             projectContainer.appendChild(projectList);
         });
