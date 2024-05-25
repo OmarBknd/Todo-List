@@ -29,19 +29,23 @@
         </div>
     </div>
             <div>
-                <dialog id="projectDialog" class="dialog">
-                    <form id="projectForm" method="dialog">
-                        <div>
-                            <legend>Title</legend>
-                            <label for=""></label>
-                            <input type="text" id="projectTitle" name="title" required>
-                        </div>
+                <dialog id="projectDialog" >
+                    <form id="projectForm" class="form" method="dialog">
+            
+                        <p class="title">Add Project </p>
                         
-                        <div>
-                            <button id="closeProjectBtn" value="Cancel" formmethod="dialog">Cancel</button>
-                            <button type="submit" id="confirmProjectBtn">Confirm</button>
-                        </div>
-                        <div><span id="errorMsg"></span></div>
+                            <div class="flex">
+                            <label>
+                                <input id="projectTitle" class="input" type="text" placeholder="" required="">
+                                <span>Title</span>
+                            </label>  
+                            </div>
+
+                            <button class="submit" type="submit" id="confirmProjectBtn">Confirm</button>
+                            <button  class="submit" id="closeProjectBtn" value="Cancel" formmethod="dialog">Cancel</button>
+                            
+                        
+                        
                     </form>
                 </dialog>
                
@@ -51,40 +55,37 @@
         
         
             <div>
-                <dialog id="taskDialog" class="dialog">
-                    <form id="taskForm" method="dialog">
-                        <div>
-                            <legend>Title</legend>
-                            <label for=""></label>
-                            <input type="text" id="taskTitle" name="title" required>
-                        </div>
-
-                        <div>
-                            <legend>Description</legend>
-                            <label for=""></label>
-                            <input type="text" id="taskDescription" >
-                        </div>
-                        <div>
-                            <legend>Due date</legend>
-                            <label for="for"></label>
-                            <input type="date" id="taskDate">
-                        </div>
-                        <div>
-                            <legend>Priority</legend>
-                            <label for="Priority"></label>
-                            <select name="Priority" id="taskPriority" size="1">
+                <dialog id="taskDialog">    
+                    <form id="taskForm" class="form ">
+                        <p class="title">Add Task </p>
+                        <p class="message">Signup now and get full access to our app. </p>
+                            <div class="flex">
+                            <label>
+                                <input id="taskTitle" class="input" type="text" placeholder="" required="">
+                                <span>Title</span>
+                            </label>  
+                            </div>  
+                                
+                        <label>
+                            <input id="taskDescription" class="input" type="text" placeholder="" required="">
+                            <span>Description</span>
+                        </label> 
+                            
+                        <label>
+                            <input id="taskDate" class="input" type="date" placeholder="" required="">
+                            <span>Due date</span>
+                        </label>
+                        <label>
+                            
+                            <span>Priority</span>
+                            <select class="input" name="Priority" id="taskPriority" size="1">
                                 <option value="low">Low</option>
                                 <option value="medium">Medium</option>
                                 <option value="high">High</option>
                             </select>
-                        </div>
-                       
-                        
-                        <div>
-                            <button id="taskCloseBtn" value="Cancel" formmethod="dialog">Cancel</button>
-                            <button type="submit" id="taskConfirmBtn">Confirm</button>
-                        </div>
-                        <div><span id="errorMsg"></span></div>
+                        </label>
+                        <button class="submit" id="taskConfirmBtn">Submit</button>
+                        <button class="submit" type="submit" id="taskCloseBtn">Cancel</button>
                     </form>
                 </dialog>
            </div>
