@@ -1,5 +1,15 @@
+@font-face {
+
+    font-family: 'Roboto';
+    src: url('../components/fonts/Roboto-Regular.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+  
+  }
+  *{font-family: 'Roboto';}
 html{
     height: 100%;
+    
 }
 body{
    margin: 0;
