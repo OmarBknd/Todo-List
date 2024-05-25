@@ -1,6 +1,7 @@
 import projects from "./project";
-
 import {format,differenceInDays } from "date-fns";
+import editSvgIcon from "./components/svgs/edit-tool-pencil-svgrepo-com.svg"
+import deleteSvgIcon from "./components/svgs/delete-trash-remove-svgrepo-com.svg"
 
 const projectsDom = (() => {
     const myProjects = projects.myProjects;
@@ -101,21 +102,32 @@ const projectsDom = (() => {
 
             
 
-            
-            const editBtn = document.createElement('button');
-            editBtn.textContent = 'Edit';
+
+            const btnsContainer = document.createElement('span')
+            btnsContainer.classList.add('svg-icons')
+            const editBtn = document.createElement('span');
+           
+            const editIcon = new Image()
+            editIcon.src = editSvgIcon
+            editBtn.appendChild(editIcon)
             editBtn.addEventListener('click', () => {
                 editTask(index);
             });
-            taskBox.appendChild(editBtn);
+            
+            btnsContainer.appendChild(editBtn);
 
            
-            const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = 'Delete';
+            const deleteBtn = document.createElement('span');
+          
+            const deleteIcon = new Image();
+            deleteIcon.src = deleteSvgIcon;
+            deleteBtn.appendChild(deleteIcon);
+           
             deleteBtn.addEventListener('click', () => {
                 deleteTask(index);
             });
-            taskBox.appendChild(deleteBtn);
+            btnsContainer.appendChild(deleteBtn);
+            taskBox.appendChild(btnsContainer)
 
             taskContainer.appendChild(taskBox);
         });
