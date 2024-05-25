@@ -1,7 +1,8 @@
 import projects from "./project";
 import {format,differenceInDays } from "date-fns";
-import editSvgIcon from "./components/svgs/edit-tool-pencil-svgrepo-com.svg"
-import deleteSvgIcon from "./components/svgs/delete-trash-remove-svgrepo-com.svg"
+import editSvgIcon from "./components/svgs/edit-tool-pencil-svgrepo-com.svg";
+import deleteSvgIcon from "./components/svgs/delete-trash-remove-svgrepo-com.svg";
+import addSvgIcon from "./components/svgs/plus-circle-1441-svgrepo-com.svg"
 
 const projectsDom = (() => {
     const myProjects = projects.myProjects;
@@ -37,6 +38,7 @@ const projectsDom = (() => {
             const projectBox = document.createElement('div');
             const projectList = document.createElement('ul');
             projectList.classList.add('project-list');
+            projectList.classList.add('svg-icons');
             projectBox.classList.add('project-box');
             projectBox.dataset.index = index;
 
@@ -50,20 +52,25 @@ const projectsDom = (() => {
             projectBox.addEventListener('click', () => {
                 selectProject(index);
             });
-            const editBtn = document.createElement('button');
-            editBtn.textContent = 'Edit';
+
+
+            const editBtn = document.createElement('span');
+            const addIcon = new Image();
+            addIcon.src = addSvgIcon;
+            titleInput.appendChild(addIcon)
+          
             editBtn.addEventListener('click', () => {
                 editProject(index);
             });
             projectBox.appendChild(editBtn)
 
-            const deleteBtn = document.createElement('button');
-            deleteBtn.textContent = 'Delete'
-            deleteBtn.addEventListener('click',()=>{
-                deleteProject(index)
-            })
-           
-            projectBox.appendChild(deleteBtn);
+           // const deleteBtn = document.createElement('button');
+           // deleteBtn.textContent = 'Delete'
+           // deleteBtn.addEventListener('click',()=>{
+           //     deleteProject(index)
+           // })
+           //
+           // projectBox.appendChild(deleteBtn);
             projectList.appendChild(projectBox);
             projectContainer.appendChild(projectList);
         });

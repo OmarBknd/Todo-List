@@ -126,7 +126,7 @@ body{
   box-shadow: 0px 0px 20px -18px;
 }
 
-.svg-icons{
+.task-box > .svg-icons{
     display: flex;  
     justify-content: flex-end;
     gap: 5px;
