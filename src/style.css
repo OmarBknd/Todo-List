@@ -50,9 +50,9 @@ body{
 }
 .project-list{
     width: 100px;
-    
-    
+   
 }
+
 #projectContainer{
    
    min-height: 100vh;
@@ -132,9 +132,14 @@ body{
     gap: 5px;
     padding-right: 5px;
 }
-.svg-icons img{
-    height: 30px;
+
+.project-box > .svg-icons{
+    width: 70px;
 }
+.svg-icons img{
+    height: 20px;
+}
+
 .svg-icons img:hover{
     background-color: #cac6c6;
 }
