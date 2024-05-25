@@ -107,6 +107,31 @@ body{
   text-align: center;
   background-color: #cac6c6;
 }
+#addProjectBtn > p >h1{
+    
+}
+#addProjectBtn >div{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+.add-project-btn{
+    text-align: center;
+   min-width: 50px;
+   height: 35px;
+   padding: 8px;
+   border-radius: 5px;
+   border: 2px solid #E0E1E4;
+   box-shadow: 0px 0px 20px -20px;
+   cursor: pointer;
+   
+   transition: all 0.2s ease-in-out 0ms;
+   background-color: #e9e7e7;
+}
+.add-project-btn:hover {
+    background-color: #cac6c6;
+    box-shadow: 0px 0px 20px -18px;
+  }
 #addTaskBtn{
    text-align: center;
    min-width: 100px;
