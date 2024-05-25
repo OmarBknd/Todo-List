@@ -41,7 +41,7 @@ body{
    grid-row: 2/4;
   
     background-color: #485265;
-   
+   max-width: 240px;
     width: 100%;
     min-height: 100%;
    
@@ -63,6 +63,7 @@ body{
 #taskContainer{
     display: grid;
     padding-left: 10px;
+    padding-right: 10px;
     gap: 10px;
 }
 
