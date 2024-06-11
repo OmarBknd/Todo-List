@@ -1,4 +1,4 @@
-import tasks,{TaskProperties} from "./task";
+import {TaskProperties} from "./task";
 console.log('project page');
 
 export class projectProperties{

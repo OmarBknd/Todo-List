@@ -2,8 +2,8 @@ import projects from "./project";
 import {format,differenceInDays } from "date-fns";
 import editSvgIcon from "./components/svgs/edit-tool-pencil-svgrepo-com.svg";
 import deleteSvgIcon from "./components/svgs/delete-trash-remove-svgrepo-com.svg";
-import addSvgIcon from "./components/svgs/plus-circle-1441-svgrepo-com.svg"
-
+//import addSvgIcon from "./components/svgs/plus-circle-1441-svgrepo-com.svg"
+console.log('project page');
 const projectsDom = (() => {
     const myProjects = projects.myProjects;
 
@@ -149,13 +149,13 @@ const projectsDom = (() => {
         selectedProject = myProjects[index];
         displaySelectedProjectTasks();
     }
-    function editProject(projectIndex){
-        const project = myProjects[projectIndex];
-        projectTitle.value = project.title;
-        editMode = true;
-        editProjectIndex = projectIndex;
-        projectDialog.showModal()
-    }
+    //function editProject(projectIndex){
+    //    const project = myProjects[projectIndex];
+    //    projectTitle.value = project.title;
+    //    editMode = true;
+    //    editProjectIndex = projectIndex;
+    //    projectDialog.showModal()
+    //}
     function deleteProject(projectIndex){
         myProjects.splice(projectIndex, 1)
         projects.saveProjectsToLocalStorage()
@@ -276,11 +276,7 @@ const projectsDom = (() => {
         taskDialog.close();
     });
 
-    // For testing purposes
-    //let project1 = new projectProperties('Project1');
-    //project1.addTaskToProject('task1 project1','2024-05-03');
-    //let project2 = new projectProperties('Project2');
-    //myProjects.push(project1, project2);
+  
 
     displayProjects();
 })();
