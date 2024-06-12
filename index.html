@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+<script defer src="runtime.js"></script><script defer src="main.js"></script></head>
+<body>
+    <div id="container" >
+        <div id="header"></div>
+        
+        <div class="projects-menu">
+            
+            <div id="addProjectBtn">
+                <p><h1>Projects</h1></p>
+                <div >
+                    <button class="add-project-btn">add Project</button>
+                </div>
+            </div>
+        <div id="projectContainer" ></div>
+    </div>
+
+    <div class="task-container-style" >
+        <div class="add-task-btn">
+            <button id="addTaskBtn">add Task</button>
+        </div>
+        <div id="taskContainer">
+            <span id="TaskcheckBox"></span>
+        </div>
+    </div>
+            <div>
+                <dialog id="projectDialog" >
+                    <form id="projectForm" class="form" method="dialog">
+            
+                        <p class="title">Add Project </p>
+                        
+                            <div class="flex">
+                            <label>
+                                <input id="projectTitle" class="input" type="text" placeholder="" required="">
+                                <span>Title</span>
+                            </label>  
+                            </div>
+
+                            <button class="submit" type="submit" id="confirmProjectBtn">Confirm</button>
+                            <button  class="submit" id="closeProjectBtn" value="Cancel" formmethod="dialog">Cancel</button>
+                            
+                        
+                        
+                    </form>
+                </dialog>
+               
+           </div>
+        
+
+        
+        
+            <div>
+                <dialog id="taskDialog">    
+                    <form id="taskForm" class="form ">
+                        <p class="title">Add Task </p>
+                        <p class="message">Signup now and get full access to our app. </p>
+                            <div class="flex">
+                            <label>
+                                <input id="taskTitle" class="input" type="text" placeholder="" required="">
+                                <span>Title</span>
+                            </label>  
+                            </div>  
+                                
+                        <label>
+                            <input id="taskDescription" class="input" type="text" placeholder="" required="">
+                            <span>Description</span>
+                        </label> 
+                            
+                        <label>
+                            <input id="taskDate" class="input" type="date" placeholder="" required="">
+                            <span>Due date</span>
+                        </label>
+                        <label>
+                            
+                            <span>Priority</span>
+                            <select class="input" name="Priority" id="taskPriority" size="1">
+                                <option value="low">Low</option>
+                                <option value="medium">Medium</option>
+                                <option value="high">High</option>
+                            </select>
+                        </label>
+                        <button class="submit" id="taskConfirmBtn">Submit</button>
+                        <button class="submit" type="submit" id="taskCloseBtn">Cancel</button>
+                    </form>
+                </dialog>
+           </div>
+        
+        
+    
+    
+</div>
+</body>
+</html>
